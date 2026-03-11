@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: myapp-sqlserver
+    restart: always
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "${DB_PASSWORD}"
+      MSSQL_PID: "Express"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - app-network
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "${DB_PASSWORD}" -C -Q "SELECT 1" || exit 1
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  backend:
+    image: ${DOCKER_HUB_USERNAME}/myapp-backend:latest
+    container_name: myapp-backend
+    restart: always
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__Default=Server=sqlserver;Database=MyAppDb;User Id=sa;Password=${DB_PASSWORD};TrustServerCertificate=True
+      - Jwt__Key=${JWT_KEY}
+      - Jwt__Issuer=MyApp
+      - Jwt__Audience=MyAppUsers
+      - AllowedOrigins__0=https://${DOMAIN}
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  frontend:
+    image: ${DOCKER_HUB_USERNAME}/myapp-frontend:latest
+    container_name: myapp-frontend
+    restart: always
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+
+volumes:
+  sqlserver_data:
+
+networks:
+  app-network:
+    driver: bridge

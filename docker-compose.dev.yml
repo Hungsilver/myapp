@@ -1,0 +1,41 @@
+# Dung cho chay local: docker compose -f docker-compose.dev.yml up
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: myapp-sqlserver-dev
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "DevPassword@123"
+      MSSQL_PID: "Express"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_dev_data:/var/opt/mssql
+    networks:
+      - dev-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: myapp-backend-dev
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Server=sqlserver;Database=MyAppDb;User Id=sa;Password=DevPassword@123;TrustServerCertificate=True
+      - Jwt__Key=DevSecretKeyThatIsAtLeast32CharactersLong!
+      - Jwt__Issuer=MyApp
+      - Jwt__Audience=MyAppUsers
+      - AllowedOrigins__0=http://localhost:4200
+    ports:
+      - "8080:8080"
+    networks:
+      - dev-network
+
+volumes:
+  sqlserver_dev_data:
+
+networks:
+  dev-network:
+    driver: bridge

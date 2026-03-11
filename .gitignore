@@ -1,0 +1,24 @@
+# Environment files - KHONG commit len git!
+.env
+.env.local
+.env.production
+
+# .NET
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
