@@ -14,7 +14,7 @@ import { Product } from '../../shared/models/models';
     <div class="page-container">
       <!-- Header -->
       <nav class="navbar">
-        <div class="nav-brand">🛍️ MyApp Shop</div>
+        <div class="nav-brand">APP</div>
         <div class="nav-actions">
           <span *ngIf="auth.isLoggedIn()" class="user-info">
             👋 {{ auth.currentUser()?.fullName }}
@@ -82,7 +82,7 @@ export class ProductsComponent implements OnInit {
 
   get totalPages() { return Math.ceil(this.total / this.pageSize); }
 
-  constructor(public auth: AuthService, private productService: ProductService) {}
+  constructor(public auth: AuthService, private productService: ProductService) { }
 
   ngOnInit() {
     this.loadProducts();
