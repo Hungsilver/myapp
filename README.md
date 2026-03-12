@@ -72,3 +72,5 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 - ✅ CRUD sản phẩm (cần đăng nhập)
 - ✅ Auto migrate database khi khởi động
 - ✅ Swagger UI
+
+- Hungsilver
