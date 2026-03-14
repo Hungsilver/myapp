@@ -14,7 +14,7 @@ import { UpdateProfileRequest } from '../../domain/models/user.model';
       min-height: 100vh;
       background: #080810;
       color: white;
-      padding: 80px 24px 40px;
+      padding: 16px 24px 40px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     .container {

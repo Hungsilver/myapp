@@ -36,7 +36,7 @@ interface AiCategory {
 
     /* HERO */
     .hero {
-      padding: 120px 24px 60px;
+      padding: 56px 24px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -364,7 +364,7 @@ interface AiCategory {
     /* NO RESULTS */
     .no-results {
       text-align: center;
-      padding: 80px 24px;
+      padding: 16px 24px;
       color: rgba(255,255,255,0.3);
     }
     .no-results-icon {

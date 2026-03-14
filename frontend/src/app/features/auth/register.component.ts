@@ -15,7 +15,7 @@ import { AuthService } from '../../application/services/auth.service';
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 80px 24px 40px;
+      padding: 16px 24px 40px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       position: relative;
       overflow: hidden;

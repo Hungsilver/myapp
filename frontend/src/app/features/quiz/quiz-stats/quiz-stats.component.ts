@@ -80,7 +80,7 @@ import { QuizStatsOverview, QuestionResponse } from '../../../domain/models/quiz
     </div>
   `,
   styles: [`
-    .quiz-stats { padding-bottom: 60px; }
+    .quiz-stats { padding: 24px 24px 60px; }
     .page-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; }
     .back-link { color: #64748b; text-decoration: none; font-size: 13px; display: block; margin-bottom: 4px; }
     .back-link:hover { color: #a78bfa; }

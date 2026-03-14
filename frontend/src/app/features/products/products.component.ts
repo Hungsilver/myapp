@@ -15,7 +15,7 @@ import { Product, CreateProductRequest } from '../../domain/models/product.model
       min-height: 100vh;
       background: #080810;
       color: white;
-      padding: 80px 24px 40px;
+      padding: 16px 24px 40px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     .container { max-width: 1300px; margin: 0 auto; }
@@ -270,7 +270,7 @@ import { Product, CreateProductRequest } from '../../domain/models/product.model
     /* EMPTY */
     .empty-state {
       text-align: center;
-      padding: 80px 24px;
+      padding: 16px 24px;
       color: rgba(255,255,255,0.3);
     }
     .empty-icon { font-size: 64px; margin-bottom: 16px; }
