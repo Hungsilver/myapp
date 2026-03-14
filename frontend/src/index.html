@@ -2,10 +2,36 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <title>MyApp Shop</title>
+  <title>AI Tools Hub</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tổng hợp các công cụ AI tốt nhất hiện nay - Chat, Image, Video, LLM và nhiều hơn nữa">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- MediaPipe — chỉ load khi trang quiz/play được truy cập -->
+  <script>
+    window.__mediapipeReady = false;
+    window.__loadMediaPipe = function() {
+      if (window.__mediapipeReady) return Promise.resolve();
+      return new Promise(function(resolve, reject) {
+        var s1 = document.createElement('script');
+        s1.src = 'https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js';
+        s1.crossOrigin = 'anonymous';
+        s1.onload = function() {
+          var s2 = document.createElement('script');
+          s2.src = 'https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js';
+          s2.crossOrigin = 'anonymous';
+          s2.onload = function() { window.__mediapipeReady = true; resolve(); };
+          s2.onerror = reject;
+          document.head.appendChild(s2);
+        };
+        s1.onerror = reject;
+        document.head.appendChild(s1);
+      });
+    };
+  </script>
 </head>
 <body>
   <app-root></app-root>

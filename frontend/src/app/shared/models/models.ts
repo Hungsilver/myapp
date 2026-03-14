@@ -1,37 +1,4 @@
-export interface User {
-  id: number;
-  fullName: string;
-  email: string;
-  role: string;
-}
-
-export interface AuthResponse {
-  token: string;
-  fullName: string;
-  email: string;
-  role: string;
-}
-
-export interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  stock: number;
-  category: string;
-  imageUrl: string;
-  createdAt: string;
-}
-
-export interface PagedResult<T> {
-  items: T[];
-  total: number;
-  page: number;
-  pageSize: number;
-}
-
-export interface ApiResponse<T> {
-  success: boolean;
-  message: string;
-  data: T;
-}
+// Re-exports from domain models (Clean Architecture)
+export type { User, AuthResponse, LoginRequest, RegisterRequest } from '../../domain/models/user.model';
+export type { Product, ProductFilterRequest, CreateProductRequest } from '../../domain/models/product.model';
+export type { ApiResponse } from '../../domain/models/api-response.model';
