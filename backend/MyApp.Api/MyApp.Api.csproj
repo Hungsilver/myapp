@@ -1,14 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+	<PackageReference Include="Dapper" Version="2.1.66" />
+	<PackageReference Include="AutoMapper" Version="14.0.0" />
+	<PackageReference Include="Google.Apis.Auth" Version="1.73.0" />
+	<!--<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />-->
+	<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+	<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+	<!--<PackageReference Include="MongoDB.Driver" Version="3.5.0" />-->
+	<PackageReference Include="RestSharp" Version="112.1.0" />
+	  
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\Enums\" />
   </ItemGroup>
 </Project>
