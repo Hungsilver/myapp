@@ -267,7 +267,7 @@ interface SessionQ extends PlayQuestion {
     </div>
   `,
   styles: [`
-    .quiz-play { min-height: 100vh; }
+    .quiz-play { min-height: 100vh; padding: 0 24px; }
     .center-screen { display:flex; flex-direction:column; align-items:center; justify-content:center; height:80vh; color:#64748b; gap:16px; }
     .spinner { width:40px; height:40px; border:3px solid #2d2d3d; border-top-color:#7c3aed; border-radius:50%; animation:spin 0.8s linear infinite; }
     @keyframes spin { to { transform:rotate(360deg); } }

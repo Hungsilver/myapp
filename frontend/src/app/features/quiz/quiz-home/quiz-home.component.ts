@@ -121,7 +121,7 @@ import { GameSummaryResponse, QuizStatsOverview } from '../../../domain/models/q
     </div>
   `,
   styles: [`
-    .quiz-home { padding-bottom: 60px; }
+    .quiz-home { padding: 24px 24px 60px; }
     .hero { display: flex; align-items: center; gap: 40px; padding: 60px 40px; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); border-radius: 20px; margin-bottom: 30px; }
     .hero-content { flex: 1; }
     .hero-badge { display: inline-block; background: rgba(139,92,246,0.2); border: 1px solid #7c3aed; color: #a78bfa; padding: 6px 16px; border-radius: 20px; font-size: 13px; margin-bottom: 16px; }

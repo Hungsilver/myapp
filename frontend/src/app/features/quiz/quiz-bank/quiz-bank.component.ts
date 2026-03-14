@@ -175,7 +175,7 @@ import { QuestionCategory, QuestionResponse, CreateQuestionRequest, UpdateQuesti
     </div>
   `,
   styles: [`
-    .quiz-bank { padding-bottom: 60px; }
+    .quiz-bank { padding: 24px 24px 60px; }
     .page-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; }
     .back-link { color: #64748b; text-decoration: none; font-size: 13px; display: block; margin-bottom: 4px; }
     .back-link:hover { color: #a78bfa; }
@@ -219,7 +219,7 @@ import { QuestionCategory, QuestionResponse, CreateQuestionRequest, UpdateQuesti
     .pagination { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 20px; color: #64748b; }
     .pagination button { background: #1e1e2e; border: 1px solid #2d2d3d; color: #94a3b8; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
     .pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1100; display: flex; align-items: center; justify-content: center; padding: 20px; padding-top: 80px; }
     .modal { background: #1a1a2e; border: 1px solid #2d2d3d; border-radius: 16px; width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto; }
     .modal-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid #2d2d3d; }
     .modal-header h2 { color: #e2e8f0; font-size: 18px; margin: 0; }
