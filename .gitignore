@@ -7,6 +7,8 @@
 backend/**/bin/
 backend/**/obj/
 backend/**/*.user
+backend/*.vsidx
+backend/*.vs
 
 # Angular
 frontend/node_modules/
